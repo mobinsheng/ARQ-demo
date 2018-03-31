@@ -15,6 +15,8 @@
 #include<vector>
 #include "task.h"
 
+#define SIMULATE_LOST_PACKET 0
+
 template<typename T>
 class ClientThread
 {
@@ -146,12 +148,14 @@ public:
                 printf("接收失败 %d,%d \n", udpsock.getsocket(), size);
                 continue;
             }
+#if SIMULATE_LOST_PACKET
             // 模拟丢包
             static int index = 0;
             ++index;
             if(index % 4 == 0){
                 continue;
             }
+#endif
 
             // 接收到的数据放到线程中进行处理，不要阻塞接收线程
             IUINT32 conv = ikcp_getconv(buff);
