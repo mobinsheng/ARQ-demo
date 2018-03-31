@@ -7,12 +7,15 @@ LIBS += \
     -lpthread \
 
 SOURCES += main.cpp \
-    test.cpp \
     ikcp.c \
-    arq_demo.cpp
+    arq_demo.cpp \
+    time_func.cpp
 
 HEADERS += \
     ikcp.h \
-    test.h \
-    sync_queue.h \
-    arq_demo.h
+    arq_demo.h \
+    udp_socket.h \
+    time_func.h \
+    client.h \
+    server.h \
+    task.h

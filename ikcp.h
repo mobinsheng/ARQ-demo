@@ -253,14 +253,15 @@ typedef struct IQUEUEHEAD iqueue_head;
 //=====================================================================
 // SEGMENT
 //=====================================================================
+// 数据片，以队列的方式进行组织
 struct IKCPSEG
 {
-	struct IQUEUEHEAD node;
-	IUINT32 conv;
-	IUINT32 cmd;
+    struct IQUEUEHEAD node; // 队列的节点
+    IUINT32 conv; // 通信的唯一标识
+    IUINT32 cmd; // 命令
 	IUINT32 frg;
-	IUINT32 wnd;
-	IUINT32 ts;
+    IUINT32 wnd; // 窗口大小
+    IUINT32 ts; // 时间戳
 	IUINT32 sn;
 	IUINT32 una;
 	IUINT32 len;

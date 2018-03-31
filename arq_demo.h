@@ -15,12 +15,7 @@
 #include <string.h>
 #include <strings.h>
 
-int create_server_socket (const char* ip,int port);
-
 void* server_thread(void*);
-
-int create_client_socket (const char* ip,int port,struct sockaddr_in* server_addr);
-
 void* client_thread(void*);
 
 #endif // COMMON_H
